@@ -94,6 +94,7 @@ nav {
 
 	display: flex;
 	align-items: center;
+	justify-content: center;
 
 	transition: all 0.2s linear;
 }
@@ -190,7 +191,7 @@ footer {
 
 /* selectors unique to portfolio.html*/
 #portfolio_pic_block {
-	width: 588px;
+	width: inherit;
 	margin-top: 40px;
 	display: flex;
 	justify-content: space-between;
@@ -235,7 +236,7 @@ form {
 
 input, textarea {
 	border: 1px solid #dddddd;
-	width: 564px;
+	width: calc(100% - 20px); 
 	margin-top: 7px;
 	padding: 9px;
 
@@ -267,7 +268,6 @@ textarea {
 
 
 /* media queries for various screen widths */
-
 @media screen and (max-width: 980px) {
 	#header_block {
 		width: 718px;
@@ -316,15 +316,20 @@ textarea {
 	#social_images img {
 		margin-right: 10px;
 	}
+
+	#profile_image {
+		width: 100%;
+		margin: 10px auto 16px auto;
+		float: none;
+	}
 }
 
 @media screen and (max-width: 640px) {
 	#header_block {
 		width: 100%;
 		height: 122px;
-		align-items: flex-start;
-		justify-content: center;
-		flex-wrap: wrap;
+
+		display: block;
 	}
 
 	#header_name_text_block {
@@ -334,7 +339,16 @@ textarea {
 
 	nav {
 		height: 52px;
+
+		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
+	}
+
+	.nav_link {
+		width: 33.3%;
+		margin: 0 auto;
+		padding: 0;
 	}
 
 	#main_block {
@@ -358,5 +372,11 @@ textarea {
 
 	#social_images img {
 		margin-right: 10px;
+	}
+
+	#profile_image {
+		width: 100%;
+		margin: 10px auto 16px auto;
+		float: none;
 	}
 }
