@@ -5,7 +5,9 @@ body {
 
 
 /* selectors for navbar */
-
+nav {
+	font-size: 150%;
+}
 
 
 /* selectors for main content */
@@ -14,6 +16,7 @@ section p {
 }
 
 aside {
+	margin-top: 5px;
 }
 
 aside img {
@@ -25,6 +28,8 @@ aside img:hover {
 }
 
 #social_images {
+	margin-top: 15px;
+
 	display: flex;
 	justify-content: space-between;
 }
@@ -32,7 +37,7 @@ aside img:hover {
 
 /* selectors unique to index.html*/
 #profile_image {
-	width: 250px;
+	width: 300px;
 	margin: 10px 25px 10px 0px;
 	float: left;
 }
@@ -49,9 +54,9 @@ aside img:hover {
 }
 
 .portfolio_pic {
-	width: 275px
-	height: 205px;
-	margin-bottom: 56px;
+	width: 330px;
+	height: 246px;
+	margin-bottom: 40px;
 	position: relative;
 }
 
@@ -60,14 +65,15 @@ aside img:hover {
 }
 
 .portfolio_pic img {
-	width: 275px;
+	width: inherit;
 }
 
 .portfolio_pic_text_block {
+	background: #4e5d6c;
 	width: 100%;
-	height: 40px;
+	height: 60px;
 	margin-top: 49.5%;
-	padding-top: 20px;
+	padding-top: 12px;
 	position: absolute;
 
 	font-size: 22px;
@@ -83,9 +89,6 @@ aside img:hover {
 
 
 /* selectors unique to contact.html */
-form {
-}
-
 input, textarea {
 	box-sizing: border-box;
 	width: 100%;
@@ -116,9 +119,10 @@ textarea {
 
 
 /* media queries for various screen widths */
-@media screen and (min-width: 1200px) {
-	#profile_image {
-		width: 300px;
+@media screen and (max-width: 1199px) {
+	.portfolio_pic {
+		width: 275px;
+		height: 205px;
 	}
 }
 
@@ -130,24 +134,44 @@ textarea {
 	#social_images img {
 		margin-right: 10px;
 	}
+
+	#profile_image {
+		width: 250px;
+	}
+
+	.portfolio_pic {
+		width: 330px;
+		height: 246px;
+	}
 }
 
 @media screen and (max-width: 767px) {
-
-}
-
-@media screen and (max-width: 640px) {
 	body {
-		padding-top: 0;
+		padding: 0;
 	}
 
 	nav {
 		position: static !important;
 	}
 
-	.container {
-		position: relative;
-		top: -20px;
+	.main {
+		margin-top: -11px;
+		padding: 0px 25px;
+	}
+
+	.portfolio_pic {
+		width: 275px;
+		height: 205px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.portfolio_pic {
+		width: 100%;
+		min-width: 275px !important;
+		height: 100%;
+		min-height: 205px !important;
+		margin: 0 15px 40px 15px;
 	}
 }
 
@@ -167,7 +191,7 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 81px;
+  margin-bottom: 61px;
 }
 
 .footer {
@@ -176,9 +200,9 @@ body {
   box-sizing: border-box;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 81px;
+  height: 61px;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 .footer p {
