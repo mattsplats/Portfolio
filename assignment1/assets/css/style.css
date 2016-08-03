@@ -184,6 +184,7 @@ footer {
 
 /* selectors unique to index.html*/
 #profile_image {
+	width: 200px;
 	margin: 10px 25px 10px 0px;
 	float: left;
 }
@@ -193,12 +194,14 @@ footer {
 #portfolio_pic_block {
 	width: inherit;
 	margin-top: 40px;
+
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
 .portfolio_pic {
+	width: 275px
 	height: 205px;
 	margin-bottom: 56px;
 	position: relative;
@@ -206,6 +209,10 @@ footer {
 
 .portfolio_pic:last-child {
 	margin-bottom: 0px;
+}
+
+.portfolio_pic img {
+	width: 275px;
 }
 
 .portfolio_pic_text_block {
@@ -236,7 +243,8 @@ form {
 
 input, textarea {
 	border: 1px solid #dddddd;
-	width: calc(100% - 20px); 
+	box-sizing: border-box;
+	width: 100%; 
 	margin-top: 7px;
 	padding: 9px;
 
@@ -286,6 +294,17 @@ textarea {
 		margin: 10px auto 16px auto;
 		float: none;
 	}
+
+	.portfolio_pic, .portfolio_pic img {
+		width: 100%;
+		max-width: 410px;
+		height: 100%
+		max-height: 306px;
+	}
+
+	.portfolio_pic_text_block {
+		margin-top: 49.5%;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -321,6 +340,11 @@ textarea {
 		width: 100%;
 		margin: 10px auto 16px auto;
 		float: none;
+	}
+
+	.portfolio_pic, .portfolio_pic img {
+		width: 275px;
+		height: 205px;
 	}
 }
 
@@ -378,5 +402,12 @@ textarea {
 		width: 100%;
 		margin: 10px auto 16px auto;
 		float: none;
+	}
+
+	.portfolio_pic, .portfolio_pic img {
+		width: 100%;
+		max-width: 410px;
+		height: 100%;
+		max-height: 306px;
 	}
 }
