@@ -8,13 +8,17 @@ a {
 }
 
 
-/* selectors for navbar */
-nav {
-	font-size: 150%;
+/* selectors for all pages */
+.navbar-brand {
+	font-size: 1.75em !important;
+	font-weight: bold;
 }
 
+.nav li {
+	font-size: 1.25em !important;
+	font-weight: normal;
+}
 
-/* selectors for main content */
 section p {
 	line-height: 190%;
 }
@@ -23,19 +27,43 @@ aside {
 	margin-top: 5px;
 }
 
-aside img {
-	transition: all 0.2s linear;
-}
-
-aside img:hover {
-	opacity: 0.7;
-}
-
-#social_images {
+#social_image_block {
 	margin-top: 15px;
 
 	display: flex;
 	justify-content: space-between;
+}
+
+.social_image {
+	position: relative;
+}
+
+.social_image div {
+	position: absolute;
+	left: -50px;
+	top: 68px;
+	width: 164px;
+
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s linear;
+
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.social_image:hover div {
+	opacity: 1;
+	visibility: visible;
+}
+
+.social_image img {
+	transition: all 0.1s linear;
+}
+
+.social_image img:hover {
+	opacity: 0.5;
 }
 
 
@@ -131,11 +159,11 @@ textarea {
 }
 
 @media screen and (max-width: 991px) {
-	#social_images {
+	#social_image_block {
 		justify-content: flex-start;
 	}
 
-	#social_images img {
+	.social_image {
 		margin-right: 10px;
 	}
 
@@ -167,6 +195,10 @@ textarea {
 		width: 275px;
 		height: 205px;
 	}
+
+	section {
+	    animation-duration: 0s !important;
+	}
 }
 
 @media screen and (max-width: 640px) {
@@ -185,6 +217,43 @@ textarea {
 		margin: 10px 0;
 	}
 }
+
+
+/* Animations */
+.move-in-left {
+	animation-name: move_in_left;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes move_in_left {
+	30%  {transform: translate3d(-1000px, 0, 0);}
+	90%  {transform: translate3d(0, 0, 0);}
+}
+
+.fade-in {
+	animation-name: fade_in;
+    animation-duration: 1.3s;
+    animation-timing-function: ease;
+}
+
+@keyframes fade_in {
+	0%   {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+.fade-in-later {
+	animation-name: fade_in_later;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+@keyframes fade_in_later {
+	0%   {opacity: 0;}
+	30%	 {opacity: 0;}
+	80%  {opacity: 1;}
+}
+
 
 
 /* Bootstrap sticky footer - see https://getbootstrap.com/examples/sticky-footer/ */
